@@ -49,8 +49,6 @@ body {
 img {
   border-radius: 50%;
   border: 12px solid #fff;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
 }
 
 h1 {
