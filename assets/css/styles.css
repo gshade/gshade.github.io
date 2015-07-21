@@ -93,7 +93,6 @@ hr {
 .contact-option:hover,
 .contact-option:focus {
   color: #539da8;
-  /*text-shadow: inset 1px 1px 1px #fff;*/
 }
 
 .contact-option__icon {
