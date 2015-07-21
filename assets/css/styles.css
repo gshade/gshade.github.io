@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'typicons';
+  src: url('../webfonts/typicons.eot?42862831');
+  src: url('../webfonts/typicons.eot?42862831#iefix') format('embedded-opentype'),
+       url('../webfonts/typicons.woff?42862831') format('woff'),
+       url('../webfonts/typicons.ttf?42862831') format('truetype'),
+       url('../webfonts/typicons.svg?42862831#typicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  background-image: url("../img/background.jpg");
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html:before {
+  background-color: rgba(0, 0, 0, 0.65);
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+body {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+  text-transform: lowercase;
+  z-index: 1;
+}
+
+img {
+  border-radius: 50%;
+  border: 12px solid #fff;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+h1 {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 54px;
+  margin: 20px 0;
+}
+
+p {
+  margin: 20px 0;
+  line-height: 1.45;
+}
+
+hr {
+  border-bottom: 0;
+  border-top: 4px dashed #fff;
+  margin: 45px auto;
+  width: 50%;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.contact {
+  margin-left: 50px;
+}
+
+.contact-option {
+  color: #fff;
+  display: block;
+  line-height: 45px;
+  text-align: left;
+  text-decoration: none;
+  transition: 0.2s color;
+}
+
+.contact-option:hover,
+.contact-option:focus {
+  color: #539da8;
+  /*text-shadow: inset 1px 1px 1px #fff;*/
+}
+
+.contact-option__icon {
+  display: inline-block;
+  font-size: 36px;
+  vertical-align: middle;
+}
+
+.contact-option__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* typicons */
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "typicons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-github:before { content: '\e800'; } /* '' */
+.icon-twitter:before { content: '\e801'; } /* '' */
+.icon-mail:before { content: '\e802'; } /* '' */
