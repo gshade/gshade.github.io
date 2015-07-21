@@ -39,6 +39,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   max-width: 500px;
+  padding: 30px;
   position: relative;
   text-align: center;
   text-transform: lowercase;
