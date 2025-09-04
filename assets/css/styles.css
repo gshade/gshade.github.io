@@ -1,146 +1,164 @@
 @font-face {
-  font-family: 'typicons';
-  src: url('../webfonts/typicons.eot?42862831');
-  src: url('../webfonts/typicons.eot?42862831#iefix') format('embedded-opentype'),
-       url('../webfonts/typicons.woff?42862831') format('woff'),
-       url('../webfonts/typicons.ttf?42862831') format('truetype'),
-       url('../webfonts/typicons.svg?42862831#typicons') format('svg');
-  font-weight: normal;
-  font-style: normal;
+  font-display: fallback;
+  font-family: "Iosevka";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../webfonts/Iosevka-Oblique.woff2") format("woff2");
 }
 
-html,
 body {
-  min-height: 100%;
-}
-
-html {
-  background-image: url("../img/background.jpg");
-  background-position: center center;
-  background-size: cover;
-  display: flex;
+  --background-gradient-from: #111111;
+  --background-gradient-to: #000000;
+  --background-gradient-size: 1.5vw;
   align-items: center;
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: radial-gradient(
+      circle at center center,
+      var(--background-gradient-from),
+      var(--background-gradient-to)
+    ),
+    repeating-radial-gradient(
+      circle at center center,
+      var(--background-gradient-from),
+      var(--background-gradient-from),
+      var(--background-gradient-size),
+      transparent calc(var(--background-gradient-size) * 2),
+      transparent var(--background-gradient-size)
+    );
+  background-blend-mode: multiply;
+  display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 
-html:before {
-  background-color: rgba(0, 0, 0, 0.65);
-  content: "";
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+.characters {
+  font-family: "Iosevka";
+  font-weight: 400;
+  font-style: italic;
+  font-size: 9vw;
+  text-transform: uppercase;
+  transform: translateY(0.125em);
 }
 
-body {
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  max-width: 500px;
-  padding: 30px;
-  position: relative;
-  text-align: center;
-  text-transform: lowercase;
-  z-index: 1;
+@keyframes character-transform {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-0.25em);
+  }
 }
 
-img {
-  border-radius: 50%;
-  border: 12px solid #fff;
+@keyframes character-color {
+  0% {
+    color: #ff0000;
+  }
+  6.67% {
+    color: #ff4500;
+  }
+  13.33% {
+    color: #ff8c00;
+  }
+  20% {
+    color: #ffd700;
+  }
+  26.67% {
+    color: #adff2f;
+  }
+  33.33% {
+    color: #32cd32;
+  }
+  40% {
+    color: #00ff7f;
+  }
+  46.67% {
+    color: #00ffff;
+  }
+  53.33% {
+    color: #00bfff;
+  }
+  60% {
+    color: #0080ff;
+  }
+  66.67% {
+    color: #4169e1;
+  }
+  73.33% {
+    color: #8a2be2;
+  }
+  80% {
+    color: #9400d3;
+  }
+  86.67% {
+    color: #ff00ff;
+  }
+  93.33% {
+    color: #ff1493;
+  }
+  100% {
+    color: #ff0000;
+  }
 }
 
-h1 {
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 54px;
-  margin: 20px 0;
-}
-
-p {
-  margin: 20px 0;
-  line-height: 1.45;
-}
-
-hr {
-  border-bottom: 0;
-  border-top: 4px dashed #fff;
-  margin: 45px auto;
-  width: 50%;
-}
-
-.u-text-left {
-  text-align: left;
-}
-
-.contact {
-  margin-left: 50px;
-}
-
-.contact-option {
-  color: #fff;
-  display: block;
-  line-height: 45px;
-  text-align: left;
-  text-decoration: none;
-  transition: 0.2s color;
-}
-
-.contact-option:hover,
-.contact-option:focus {
-  color: #539da8;
-}
-
-.contact-option__icon {
+.character {
+  animation-name: character-transform, character-color;
+  animation-duration: 1s, 3s;
+  animation-iteration-count: infinite, infinite;
+  animation-timing-function: ease-in-out, linear;
+  animation-direction: alternate, normal;
+  animation-delay: calc(var(--character-index) * -0.05s),
+    calc(var(--character-index) * -0.2s);
   display: inline-block;
-  font-size: 36px;
-  vertical-align: middle;
+  will-change: transform, color;
 }
 
-.contact-option__text {
-  display: inline-block;
-  vertical-align: middle;
+/*
+
+.character:nth-child(1) {
+  color: #ff0000;
+}
+.character:nth-child(2) {
+  color: #ff4500;
+}
+.character:nth-child(3) {
+  color: #ff8c00;
+}
+.character:nth-child(4) {
+  color: #ffd700;
+}
+.character:nth-child(5) {
+  color: #adff2f;
+}
+.character:nth-child(6) {
+  color: #32cd32;
+}
+.character:nth-child(7) {
+  color: #00ff7f;
+}
+.character:nth-child(8) {
+  color: #00ffff;
+}
+.character:nth-child(9) {
+  color: #00bfff;
+}
+.character:nth-child(10) {
+  color: #0080ff;
+}
+.character:nth-child(11) {
+  color: #4169e1;
+}
+.character:nth-child(12) {
+  color: #8a2be2;
+}
+.character:nth-child(13) {
+  color: #9400d3;
+}
+.character:nth-child(14) {
+  color: #ff00ff;
+}
+.character:nth-child(15) {
+  color: #ff1493;
 }
 
-/* typicons */
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: "typicons";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  /* opacity: .8; */
-
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
-
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-
-  /* Font smoothing. That was taken from TWBS */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-}
-
-.icon-github:before { content: '\e800'; } /* '' */
-.icon-twitter:before { content: '\e801'; } /* '' */
-.icon-mail:before { content: '\e802'; } /* '' */
+*/
