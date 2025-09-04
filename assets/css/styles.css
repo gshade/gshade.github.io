@@ -170,3 +170,61 @@ body {
 canvas {
   display: none;
 }
+
+audio {
+  display: none;
+}
+
+.button {
+  align-items: center;
+  appearance: unset;
+  background-color: currentColor;
+  border: unset;
+  border-radius: 50%;
+  color: #222;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  inset: auto auto 10vh auto;
+  justify-content: center;
+  position: fixed;
+  transition-duration: 0.2s;
+  transition-property: transform;
+  width: 50px;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: scale(1.1);
+}
+
+.button.is-playing {
+  animation-name: character-color;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: normal;
+}
+
+.button__icon {
+  fill: #fff;
+  height: 50%;
+  pointer-events: none;
+  width: 50%;
+}
+
+.button__icon--play {
+  display: block;
+}
+
+.button.is-playing .button__icon--play {
+  display: none;
+}
+
+.button__icon--pause {
+  display: none;
+}
+
+.button.is-playing .button__icon--pause {
+  display: block;
+}

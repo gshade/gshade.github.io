@@ -40,3 +40,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animate();
 });
+
+const $audio = document.querySelector(".js-audio");
+const $audioButton = document.querySelector(".js-audio-button");
+
+let playing = false;
+
+$audioButton.addEventListener("click", () => {
+  if (playing) {
+    $audio.pause();
+    $audioButton.classList.remove("is-playing");
+    playing = false;
+  } else {
+    $audio.play();
+    $audioButton.classList.add("is-playing");
+    playing = true;
+  }
+});
