@@ -33,7 +33,7 @@ body {
 }
 
 .characters {
-  font-family: "Iosevka";
+  font-family: "Iosevka", monospace;
   font-weight: 400;
   font-style: italic;
   font-size: 9vw;
