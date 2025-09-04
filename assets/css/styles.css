@@ -162,3 +162,7 @@ body {
 }
 
 */
+
+canvas {
+  display: none;
+}
