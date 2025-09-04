@@ -5,13 +5,16 @@
   src: url("../webfonts/Iosevka-Oblique.woff2") format("woff2");
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   --background-gradient-from: #111111;
   --background-gradient-to: #000000;
   --background-gradient-size: 1.5vw;
   align-items: center;
   background-color: #e5e5f7;
-  opacity: 0.8;
   background-image: radial-gradient(
       circle at center center,
       var(--background-gradient-from),
@@ -28,7 +31,9 @@ body {
   background-blend-mode: multiply;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  margin: unset;
+  min-height: 100dvh;
+  opacity: 0.8;
 }
 
 .characters {
